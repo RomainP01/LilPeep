@@ -1,0 +1,242 @@
+.fixed-div {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.logo-a {
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 10vh;
+}
+
+.first {
+  background: url("/img/hellboy.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.second {
+  background-color: white;
+  height: 260vh;
+}
+
+.third{
+  background-color: white;
+  height: auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+.product-list {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+}
+.product {
+  height: 50vh;
+  display: block;
+  
+}
+
+.product-first{
+  height: 80vh;
+}
+
+.product-third{
+  height: 80vh;
+}
+
+.container-product{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.messageLiza{
+  margin-top: 7em;
+  padding-left: 10%; padding-right: 10%;
+  font-weight: bold;
+}
+
+.movie{
+  margin-top: 7em;
+}
+.archive{
+  margin-top: 7em;
+}
+
+.the-film{
+  text-align: center;
+}
+
+.empty{
+  height: 35vh;
+}
+
+
+
+
+/*Overlay upon image */
+.container-image {
+  position: relative;
+  width: 110%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.container-image:hover .overlay {
+  opacity: 0.5;
+}
+
+.text {
+  color: black;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+/*Hamburger not mine */
+
+#menuToggle {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    text-decoration: underline;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 100%;
+  height: 200vh;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 20em;
+
+  background: rgba(255, 255, 255, 0.7);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 2em;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
